@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.openmrs.maven.parents</groupId>
+        <artifactId>maven-parent-openmrs-module</artifactId>
+        <version>1.1.1</version>
+    </parent>
+
+	<groupId>org.openmrs.module</groupId>
+	<artifactId>procedureroom</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Procedure Room</name>
+	<description>Room where procedures are carried out including wound stitching, cleaning and tatanus injections</description>
+
+	<url>https://wiki.openmrs.org/x/FQ4z</url>
+
+	<scm>
+		<connection>scm:git:https://github.com/uonafya/ehrprocedureroom.git</connection>
+		<developerConnection>scm:git:https://github.com/uonafya/ehrprocedureroom.git</developerConnection>
+		<url>https://github.com/uonafya/ehrprocedureroom.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<modules>
+		<module>api</module>
+		<module>omod</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>kenyaemr-api</artifactId>
+				<version>${kenyaemrVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appframework-api</artifactId>
+				<version>${appframeworkVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatadeploy-api</artifactId>
+				<version>${metadatadeployVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uiframework-api</artifactId>
+				<version>${uiframeworkVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>kenyacore-api</artifactId>
+				<version>${kenyacoreVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>kenyaui-api</artifactId>
+				<version>${kenyauiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>ehrconfigs-api</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<scope>provided</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>openmrs-repo</id>
+			<name>OpenMRS Nexus Repository</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+		</repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>openmrs-repo</id>
+			<name>OpenMRS Nexus Repository</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+    <properties>
+        <openmrsPlatformVersion>1.12.0</openmrsPlatformVersion>
+		<appframeworkVersion>2.2.1</appframeworkVersion>
+		<calculationVersion>1.0</calculationVersion>
+		<htmlformentryVersion>2.3</htmlformentryVersion>
+		<htmlwidgetsVersion>1.6.6</htmlwidgetsVersion>
+		<idgenVersion>2.6</idgenVersion>
+		<metadatadeployVersion>1.2</metadatadeployVersion>
+		<metadatasharingVersion>1.1.8</metadatasharingVersion>
+		<reportingVersion>0.9.8.1</reportingVersion>
+		<serializationxstreamVersion>0.2.7</serializationxstreamVersion>
+		<uiframeworkVersion>3.8</uiframeworkVersion>
+		<kenyacoreVersion>2.4.1</kenyacoreVersion>
+		<kenyauiVersion>2.1.1</kenyauiVersion>
+		<kenyaemrVersion>17.0.3</kenyaemrVersion>
+		<jodaTimeVersion>2.9.1</jodaTimeVersion>
+		<webservices.restVersion>2.1</webservices.restVersion>
+		<logicVersion>0.5.2</logicVersion>
+		<uilibraryVersion>2.0.4</uilibraryVersion>
+		<hospitalcoreVersion>1.0.0-SNAPSHOT</hospitalcoreVersion>
+    </properties>
+</project>
