@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 'module/${rootArtifactid}/${rootArtifactid}Link.form'.
  */
 @Controller("${rootrootArtifactid}.ProcedureRoomController")
-@RequestMapping(value = "module/${rootArtifactid}/${rootArtifactid}.form")
+@RequestMapping(value = "module/procedureroom/procedureroom.form")
 public class ProcedureRoomController {
 	
 	/** Logger for this class and subclasses */
@@ -39,7 +39,7 @@ public class ProcedureRoomController {
 	UserService userService;
 	
 	/** Success form view name */
-	private final String VIEW = "/module/${rootArtifactid}/${rootArtifactid}";
+	private final String VIEW = "/module/procedureroom/procedureroom";
 	
 	/**
 	 * Initially called after the getUsers method to get the landing form name

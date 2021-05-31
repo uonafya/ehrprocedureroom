@@ -1,8 +1,0 @@
-org/openmrs/module/procedureroom/ProcedureRoomConfig.class
-org/openmrs/module/procedureroom/metadata/ProcedureRoomSecurityMetadata$_Privilege.class
-org/openmrs/module/procedureroom/ProcedureRoomActivator.class
-org/openmrs/module/procedureroom/metadata/ProcedureRoomSecurityMetadata$_Role.class
-org/openmrs/module/procedureroom/api/dao/ProcedureRoomDao.class
-org/openmrs/module/procedureroom/metadata/ProcedureRoomSecurityMetadata.class
-org/openmrs/module/procedureroom/api/impl/ProcedureRoomServiceImpl.class
-org/openmrs/module/procedureroom/api/ProcedureRoomService.class

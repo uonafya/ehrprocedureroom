@@ -1,6 +1,0 @@
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/api/dao/ProcedureRoomDao.java
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/ProcedureRoomConfig.java
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/metadata/ProcedureRoomSecurityMetadata.java
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/ProcedureRoomActivator.java
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/api/ProcedureRoomService.java
-/home/codehub/workspace/integrated_EHR/procedureroom/api/src/main/java/org/openmrs/module/procedureroom/api/impl/ProcedureRoomServiceImpl.java
