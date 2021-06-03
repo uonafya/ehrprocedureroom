@@ -60,7 +60,7 @@
         <constructor-arg value="procedureroom.procedure" />
         <constructor-arg value="Procedure Room" />
         <constructor-arg value="procedureroom/procedureRoomAppHome.page" />
-        <constructor-arg value="procedureroom:apps/procedureroom.jpg" />
+        <constructor-arg value="procedureroom:apps/procedureroom.png" />
         <constructor-arg value="2001" />
     </bean>
 </beans>
