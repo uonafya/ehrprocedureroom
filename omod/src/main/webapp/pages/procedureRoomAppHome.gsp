@@ -40,7 +40,7 @@ table#summary.dataTable tbody tr:hover {
             <% if (procedures.empty) { %>
             <tr>
                 <td colspan="6">
-                    No records found for this patirnt
+                    No records found.
                 </td>
             </tr>
             <% } %>
