@@ -22,7 +22,7 @@ public class ProcedureRoomAppHomePageController {
 		Concept procedureConcept = Context.getConceptService().getConceptByUuid("1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		for (OpdTestOrder opdTestOrder : allTestOrders) {
 			SimplifiedProcedure simplifiedProcedure = new SimplifiedProcedure();
-			if (opdTestOrder.getConcept().equals(procedureConcept) && opdTestOrder.getIndoorStatus() == 1) {
+			if (opdTestOrder.getConcept().equals(procedureConcept)) {
 				simplifiedProcedure.setPatientId(opdTestOrder.getPatient().getPatientId());
 				simplifiedProcedure.setPatientIdentifier(opdTestOrder.getPatient().getPatientIdentifier().getIdentifier());
 				simplifiedProcedure.setNames(opdTestOrder.getPatient().getPersonName().getFullName());
