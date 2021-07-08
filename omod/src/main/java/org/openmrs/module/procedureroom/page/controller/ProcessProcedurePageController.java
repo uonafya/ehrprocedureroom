@@ -4,14 +4,12 @@ import org.openmrs.Concept;
 import org.openmrs.Patient;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.kenyaui.annotation.AppPage;
+import org.openmrs.module.procedureroom.model.SimplifiedConcept;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.page.PageModel;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,11 +24,16 @@ public class ProcessProcedurePageController {
 	        @RequestParam("procedureId") Integer procedureId) {
 		
 		List<Concept> actonList = new ArrayList<Concept>();
-		Map<Integer, String> conceptIdAndName = new HashMap<Integer, String>();
+		List<SimplifiedConcept> conceptIdAndName = new ArrayList<SimplifiedConcept>();
 		actonList.add(Context.getConceptService().getConceptByUuid("1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
 		actonList.add(Context.getConceptService().getConceptByUuid("1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+		SimplifiedConcept simplifiedConcept = new SimplifiedConcept();
 		for (Concept concept : actonList) {
-			conceptIdAndName.put(concept.getConceptId(), concept.getName(Locale.US, true).getName());
+			if (concept != null && concept.getName() != null) {
+				simplifiedConcept.setConcept_id(concept.getConceptId());
+				simplifiedConcept.setName(concept.getName(Locale.US, true).getName());
+			}
+			conceptIdAndName.add(simplifiedConcept);
 		}
 		
 		model.addAttribute("procedure", procedure);
