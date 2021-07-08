@@ -35,6 +35,8 @@ public class ProcedureRoomAppHomePageController {
 			}
 		}
 		model.addAttribute("procedures", simplifiedProcedureList);
+		model.addAttribute("done", new ArrayList<SimplifiedProcedure>());
+		model.addAttribute("declined", new ArrayList<SimplifiedProcedure>());
 		
 	}
 }
