@@ -24,7 +24,7 @@ public class ProcedureRoomAppHomePageController {
 			SimplifiedProcedure simplifiedProcedure = new SimplifiedProcedure();
 			if (opdTestOrder.getConcept().equals(procedureConcept)) {
 				simplifiedProcedure.setPatientId(opdTestOrder.getPatient().getPatientId());
-				simplifiedProcedure.setPatientIdentifier(opdTestOrder.getPatient().getPatientIdentifier().getIdentifier());
+				simplifiedProcedure.setProcedureId(opdTestOrder.getValueCoded().getConceptId());
 				simplifiedProcedure.setNames(opdTestOrder.getPatient().getPersonName().getFullName());
 				simplifiedProcedure.setFrom(opdTestOrder.getFromDept());
 				simplifiedProcedure.setProcedure(opdTestOrder.getValueCoded().getName().getName());

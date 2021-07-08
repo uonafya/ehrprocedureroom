@@ -6,7 +6,7 @@ public class SimplifiedProcedure {
 	
 	private Integer patientId;
 	
-	private String patientIdentifier;
+	private Integer procedureId;
 	
 	public Integer getPatientId() {
 		return patientId;
@@ -16,12 +16,12 @@ public class SimplifiedProcedure {
 		this.patientId = patientId;
 	}
 	
-	public String getPatientIdentifier() {
-		return patientIdentifier;
+	public Integer getProcedureId() {
+		return procedureId;
 	}
 	
-	public void setPatientIdentifier(String patientIdentifier) {
-		this.patientIdentifier = patientIdentifier;
+	public void setProcedureId(Integer procedureId) {
+		this.procedureId = procedureId;
 	}
 	
 	public String getNames() {
@@ -63,4 +63,5 @@ public class SimplifiedProcedure {
 	private String from;
 	
 	private Date timeOrdered;
+	
 }
