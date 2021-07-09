@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @AppPage("procedureroom.procedure")
 public class ProcedureRoomAppHomePageController {
@@ -44,12 +43,12 @@ public class ProcedureRoomAppHomePageController {
 		}
 		//check all the procedures processed for the patient and exclude them
 		List<Obs> procedureObs = Context.getObsService().getObservations(null, null, Arrays.asList(procedureConcept), null,
-		    null, Arrays.asList(kenyaEmrService.getDefaultLocation()), null, null, null, getPreviousDateBasedOnMonths(1),
+		    null, Arrays.asList(kenyaEmrService.getDefaultLocation()), null, null, null, getPreviousDateBasedOnMonths(),
 		    new Date(), false);
 		List<CompletedProceduresSimplifier> completedProceduresSimplifierList = new ArrayList<CompletedProceduresSimplifier>();
 		for (Obs obs : procedureObs) {
 			CompletedProceduresSimplifier completedProceduresSimplifier = new CompletedProceduresSimplifier();
-			if (obs != null && obs.getValueCoded() != null) {
+			if (obs != null && obs.getValueCoded() != null && obs.getValueText() != null) {
 				completedProceduresSimplifier.setPatientName(obs.getPerson().getPersonName().getFullName());
 				completedProceduresSimplifier.setProcedureOrdered(obs.getValueCoded().getName().getName());
 				completedProceduresSimplifier.setDatePerformed(obs.getObsDatetime());
@@ -60,16 +59,23 @@ public class ProcedureRoomAppHomePageController {
 				completedProceduresSimplifierList.add(completedProceduresSimplifier);
 			}
 		}
+		//loop through what is suppossed to be done today and what is already done
+		//Difference is what we need to remian schduled for today
+		List<SimplifiedProcedure> flteredFinal = new ArrayList<SimplifiedProcedure>();
+		for (SimplifiedProcedure simplifiedProcedure : simplifiedProcedureList) {
+			for (CompletedProceduresSimplifier completedProceduresSimplifier : completedProceduresSimplifierList) {
+				
+			}
+		}
 		model.addAttribute("procedures", simplifiedProcedureList);
 		model.addAttribute("done", completedProceduresSimplifierList);
-		model.addAttribute("declined", new ArrayList<SimplifiedProcedure>());
 		
 	}
 	
-	private Date getPreviousDateBasedOnMonths(int threshold) {
+	private Date getPreviousDateBasedOnMonths() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(new Date());
-		calendar.add(Calendar.MONTH, -threshold);
+		calendar.add(Calendar.MONTH, -1);
 		return calendar.getTime();
 	}
 }

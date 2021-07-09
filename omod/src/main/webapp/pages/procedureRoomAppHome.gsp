@@ -33,15 +33,15 @@ table#tbl2.dataTable tbody tr:hover {
 }
 </style>
 <div class="ke-panel-frame">
-    <div class="ke-panel-heading">Procedures Scheduled today</div>
+    <div class="ke-panel-heading">Scheduled Procedures</div>
     <br />
     <div class="ke-page-content">
 
 
         <div style="background-color: #F3F9FF;" width="100%" id="tabs" style="margin-top: 40px!important;">
             <ul id="inline-tabs">
-                <li><a href="#tabs-1">Procedure Queue</a></li>
-                <li><a href="#tabs-2">Completed Procedure</a></li>
+                <li><a href="#tabs-1">Scheduled Procedure - today</a></li>
+                <li><a href="#tabs-2">Processed Procedures - Last one month</a></li>
             </ul>
         <div id="tabs-1">
             <table id="tbl" width="100%">

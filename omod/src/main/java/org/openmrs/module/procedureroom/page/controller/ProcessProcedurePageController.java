@@ -45,6 +45,7 @@ public class ProcessProcedurePageController {
 	public String post(HttpServletRequest request, PageModel model, UiUtils uiUtils,
 	        @RequestParam("patientId") Patient patient, @RequestParam("action-taken") Integer action,
 	        @RequestParam("procedureNotes") String notes, @RequestParam("procedureId") Integer procedureId) {
+		System.out.println("Action taken is >>>" + action + ">> and nots are >>" + notes);
 		KenyaEmrService kenyaEmrService = Context.getService(KenyaEmrService.class);
 		Concept procedureConcept = Context.getConceptService().getConceptByUuid("1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (action != null && procedureId != null) {
