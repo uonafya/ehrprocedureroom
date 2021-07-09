@@ -42,7 +42,6 @@ table#tbl2.dataTable tbody tr:hover {
             <ul id="inline-tabs">
                 <li><a href="#tabs-1">Procedure Queue</a></li>
                 <li><a href="#tabs-2">Completed Procedure</a></li>
-                <li><a href="#tabs-3">Declined Procedure</a></li>
             </ul>
         <div id="tabs-1">
             <table id="tbl" width="100%">
@@ -82,9 +81,8 @@ table#tbl2.dataTable tbody tr:hover {
                 <thead>
                 <tr>
                     <th>Patient Names</th>
-                    <th>Departiment</th>
-                    <th>Ordered Procedure</th>
-                    <th>Date Ordered</th>
+                    <th>Procedure Performed</th>
+                    <th>Date of Procedure</th>
                     <td>Status</td>
                     <td>Notes</td>
                 </tr>
@@ -99,45 +97,11 @@ table#tbl2.dataTable tbody tr:hover {
                 <% } %>
                 <% done.each {%>
                 <tr>
-                    <td>${it.patientId}</td>
-                    <td>${it.procedureId}</td>
-                    <td>${it.names}</td>
-                    <td>${it.from}</td>
-                    <td>${it.procedure}</td>
-                    <td>${it.timeOrdered}</td>
-                </tr>
-                <%}%>
-                </tbody>
-            </table>
-        </div>
-        <div id="tabs-3">
-            <table id="tbl2" width="100%">
-                <thead>
-                <tr>
-                    <th>Patient Names</th>
-                    <th>Departiment</th>
-                    <th>Ordered Procedure</th>
-                    <th>Date Ordered</th>
-                    <td>Status</td>
-                    <td>Notes</td>
-                </tr>
-                </thead>
-                <tbody>
-                <% if (declined.empty) { %>
-                <tr>
-                    <td colspan="6">
-                        No records found.
-                    </td>
-                </tr>
-                <% } %>
-                <% declined.each {%>
-                <tr>
-                    <td>${it.patientId}</td>
-                    <td>${it.procedureId}</td>
-                    <td>${it.names}</td>
-                    <td>${it.from}</td>
-                    <td>${it.procedure}</td>
-                    <td>${it.timeOrdered}</td>
+                    <td>${it.patientName}</td>
+                    <td>${it.procedureOrdered}</td>
+                    <td>${it.datePerformed}</td>
+                    <td>${it.action}</td>
+                    <td>${it.comments}</td>
                 </tr>
                 <%}%>
                 </tbody>

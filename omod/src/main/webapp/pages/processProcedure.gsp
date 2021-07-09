@@ -24,11 +24,10 @@
                             <h2>Action taken<span>*</span></h2>
                             <div class="col4">
                                 <p>
-                                    <select id="action-taken" name="action-taken" class="required" >
+                                    <select id="action-taken" name="action-taken">
                                         <option value="">-Please select-</option>
-                                        <% action.each {%>
-                                            <option value="${it.concept_id}">${it.name}</option>
-                                        <%}%>
+                                            <option value="1267">Completed</option>
+                                            <option value="1118">Declined</option>
                                     </select>
                                     <span id="error123" class="field-error" style="display: none"></span>
                                 </p>
