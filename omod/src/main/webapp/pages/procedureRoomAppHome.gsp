@@ -41,7 +41,7 @@ table#tbl2.dataTable tbody tr:hover {
         <div style="background-color: #F3F9FF;" width="100%" id="tabs" style="margin-top: 40px!important;">
             <ul id="inline-tabs">
                 <li><a href="#tabs-1">Scheduled Procedure - today</a></li>
-                <li><a href="#tabs-2">Processed Procedures - Last one month</a></li>
+                <li><a href="#tabs-2">Processed Procedures - Last 14 days</a></li>
             </ul>
         <div id="tabs-1">
             <table id="tbl" width="100%">

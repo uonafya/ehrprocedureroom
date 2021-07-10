@@ -86,7 +86,7 @@ public class ProcedureRoomAppHomePageController {
 	private Date getPreviousDateBasedOnMonths() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(new Date());
-		calendar.add(Calendar.MONTH, -1);
+		calendar.add(Calendar.DATE, -14);
 		return calendar.getTime();
 	}
 }
