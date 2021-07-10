@@ -54,6 +54,7 @@ public class ProcedureRoomAppHomePageController {
 				completedProceduresSimplifier.setDatePerformed(obs.getObsDatetime());
 				completedProceduresSimplifier.setAction(obs.getValueText());
 				completedProceduresSimplifier.setComments(obs.getComment());
+				completedProceduresSimplifier.setPatientId(obs.getPersonId());
 				
 				//add it to a list
 				completedProceduresSimplifierList.add(completedProceduresSimplifier);
@@ -61,13 +62,23 @@ public class ProcedureRoomAppHomePageController {
 		}
 		//loop through what is suppossed to be done today and what is already done
 		//Difference is what we need to remian schduled for today
-		List<SimplifiedProcedure> flteredFinal = new ArrayList<SimplifiedProcedure>();
+		List<SimplifiedProcedure> filteredFinal = new ArrayList<SimplifiedProcedure>();
+		List<SimplifiedProcedure> servicedProcedures = new ArrayList<SimplifiedProcedure>();
 		for (SimplifiedProcedure simplifiedProcedure : simplifiedProcedureList) {
 			for (CompletedProceduresSimplifier completedProceduresSimplifier : completedProceduresSimplifierList) {
-				
+				if (completedProceduresSimplifier.getDatePerformed().equals(simplifiedProcedure.getTimeOrdered())
+				        && simplifiedProcedure.getPatientId().equals(completedProceduresSimplifier.getPatientId())
+				        && simplifiedProcedure.getProcedure().equals(completedProceduresSimplifier.getProcedureOrdered())
+				        && completedProceduresSimplifier.getAction() != null) {
+					//do nothing those procedures have already been servced,
+					servicedProcedures.add(simplifiedProcedure);
+					
+				} else {
+					filteredFinal.add(simplifiedProcedure);
+				}
 			}
 		}
-		model.addAttribute("procedures", simplifiedProcedureList);
+		model.addAttribute("procedures", filteredFinal);
 		model.addAttribute("done", completedProceduresSimplifierList);
 		
 	}
