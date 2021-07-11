@@ -12,6 +12,8 @@ import org.openmrs.module.procedureroom.model.SimplifiedProcedure;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.page.PageModel;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -66,11 +68,12 @@ public class ProcedureRoomAppHomePageController {
 		List<SimplifiedProcedure> servicedProcedures = new ArrayList<SimplifiedProcedure>();
 		for (SimplifiedProcedure simplifiedProcedure : simplifiedProcedureList) {
 			for (CompletedProceduresSimplifier completedProceduresSimplifier : completedProceduresSimplifierList) {
-				if (completedProceduresSimplifier.getDatePerformed().equals(simplifiedProcedure.getTimeOrdered())
+				if (formatDate(completedProceduresSimplifier.getDatePerformed()).equals(
+				    formatDate(simplifiedProcedure.getTimeOrdered()))
 				        && simplifiedProcedure.getPatientId().equals(completedProceduresSimplifier.getPatientId())
 				        && simplifiedProcedure.getProcedure().equals(completedProceduresSimplifier.getProcedureOrdered())
 				        && completedProceduresSimplifier.getAction() != null) {
-					//do nothing those procedures have already been servced,
+					//do nothing those procedures have already been serviced,
 					servicedProcedures.add(simplifiedProcedure);
 					
 				} else {
@@ -88,5 +91,12 @@ public class ProcedureRoomAppHomePageController {
 		calendar.setTime(new Date());
 		calendar.add(Calendar.DATE, -14);
 		return calendar.getTime();
+	}
+	
+	private static String formatDate(Date date) {
+		
+		Format formatter = new SimpleDateFormat("yyyy-MM-dd");
+		
+		return formatter.format(date);
 	}
 }
