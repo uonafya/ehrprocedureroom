@@ -25,7 +25,7 @@ public class ProcedureRoomAppHomePageController {
 	
 	public void controller(UiUtils ui, PageModel model) {
 		HospitalCoreService hospitalCoreService = Context.getService(HospitalCoreService.class);
-		List<OpdTestOrder> allTestOrders = hospitalCoreService.getAllOpdOrdersByDateRange(true);
+		List<OpdTestOrder> allTestOrders = hospitalCoreService.getAllOpdOrdersByDateRange(true, "", "");
 		List<SimplifiedProcedure> simplifiedProcedureList = new ArrayList<SimplifiedProcedure>();
 		Concept procedureConcept = Context.getConceptService().getConceptByUuid("1651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		KenyaEmrService kenyaEmrService = Context.getService(KenyaEmrService.class);
