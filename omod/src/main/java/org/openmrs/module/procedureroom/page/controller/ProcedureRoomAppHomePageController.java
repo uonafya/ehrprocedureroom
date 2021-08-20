@@ -75,11 +75,10 @@ public class ProcedureRoomAppHomePageController {
 				        && completedProceduresSimplifier.getAction() != null) {
 					//do nothing those procedures have already been serviced,
 					servicedProcedures.add(simplifiedProcedure);
-					
-				} else {
-					filteredFinal.add(simplifiedProcedure);
+					break;
 				}
 			}
+			filteredFinal.add(simplifiedProcedure);
 		}
 		model.addAttribute("procedures", filteredFinal);
 		model.addAttribute("done", completedProceduresSimplifierList);
