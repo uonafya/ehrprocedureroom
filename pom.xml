@@ -80,6 +80,18 @@
 				<scope>provided</scope>
 
 			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-api</artifactId>
+				<version>${legacyUiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-omod</artifactId>
+				<version>${legacyUiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
@@ -109,7 +121,7 @@
 	</pluginRepositories>
 
     <properties>
-        <openmrsPlatformVersion>1.12.0</openmrsPlatformVersion>
+        <openmrsPlatformVersion>2.3.3</openmrsPlatformVersion>
 		<appframeworkVersion>2.9</appframeworkVersion>
 		<calculationVersion>1.0</calculationVersion>
 		<htmlformentryVersion>2.3</htmlformentryVersion>
@@ -127,6 +139,7 @@
 		<webservices.restVersion>2.1</webservices.restVersion>
 		<logicVersion>0.5.2</logicVersion>
 		<uilibraryVersion>2.0.4</uilibraryVersion>
-		<hospitalcoreVersion>1.0.4</hospitalcoreVersion>
-    </properties>
+		<hospitalcoreVersion>1.0.7-SNAPSHOT</hospitalcoreVersion>
+		<legacyUiVersion>1.5.0</legacyUiVersion>
+	</properties>
 </project>
