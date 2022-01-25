@@ -69,7 +69,7 @@
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>ehrconfigs-api</artifactId>
-				<version>1.0.0</version>
+				<version>1.1.1</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
@@ -125,8 +125,7 @@
 		<kenyaemrVersion>17.0.3</kenyaemrVersion>
 		<jodaTimeVersion>2.9.1</jodaTimeVersion>
 		<webservices.restVersion>2.1</webservices.restVersion>
-		<logicVersion>0.5.2</logicVersion>
 		<uilibraryVersion>2.0.4</uilibraryVersion>
-		<hospitalcoreVersion>1.0.4</hospitalcoreVersion>
+		<hospitalcoreVersion>1.0.7</hospitalcoreVersion>
     </properties>
 </project>
